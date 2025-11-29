@@ -1,0 +1,92 @@
+.card {
+  width: 150px;
+  height: 150px;
+  perspective: 1000px;
+  cursor: pointer;
+}
+
+.card:hover:not(.locked) {
+  transform: scale(1.05);
+  transition: transform 0.2s;
+}
+
+.card.locked {
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+.card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+}
+
+.card.opened .card-inner {
+  transform: rotateY(180deg);
+}
+
+.card-front,
+.card-back {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.card-front {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  flex-direction: column;
+}
+
+.day-number {
+  font-size: 48px;
+  font-weight: bold;
+}
+
+.lock-icon {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 20px;
+}
+
+.card-back {
+  background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+  color: white;
+  transform: rotateY(180deg);
+  padding: 15px;
+  box-sizing: border-box;
+}
+
+.content {
+  text-align: center;
+}
+
+.content h3 {
+  margin: 8px 0 8px 0;
+  font-size: 16px;
+}
+
+.content p {
+  margin: 0 0 10px 0;
+  font-size: 12px;
+}
+
+.emoji {
+  font-size: 16px;
+}
+
+.card-inner.no-transition,
+.card.no-transition .card-inner {
+  transition: none !important;
+}

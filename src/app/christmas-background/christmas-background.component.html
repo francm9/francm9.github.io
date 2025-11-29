@@ -1,0 +1,29 @@
+<div class="christmas-background">
+  <!-- Copos de nieve -->
+  <div class="snowflake" 
+       *ngFor="let flake of snowflakes"
+       [style.left.%]="(flake * 2) % 100"
+       [style.animation-delay.s]="(flake * 0.2) % 10"
+       [style.animation-duration.s]="10 + (flake % 10)">
+    ❄
+  </div>
+
+  <!-- Estrellas brillantes -->
+  <div class="stars">
+    <div class="star" *ngFor="let star of [1,2,3,4,5,6,7,8,9,10]"></div>
+  </div>
+
+  <!-- Luces navideñas en la parte superior -->
+  <div class="christmas-lights">
+    <div class="light red"></div>
+    <div class="light green"></div>
+    <div class="light yellow"></div>
+    <div class="light blue"></div>
+    <div class="light red"></div>
+    <div class="light green"></div>
+    <div class="light yellow"></div>
+    <div class="light blue"></div>
+    <div class="light red"></div>
+    <div class="light green"></div>
+  </div>
+</div>

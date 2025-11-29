@@ -1,0 +1,21 @@
+<div class="card" 
+     [class.opened]="isOpened" 
+     [class.locked]="isLocked"
+     [class.no-transition]="skipAnimation"
+     (click)="onCardClick()">
+  <div class="card-inner">
+    <!-- Frente de la carta (número del día) -->
+    <div class="card-front">
+      <div class="day-number">{{ day }}</div>
+      <div class="lock-icon" *ngIf="isLocked">🔒</div>
+    </div>
+    
+    <!-- Parte trasera (contenido revelado) -->
+    <div class="card-back">
+      <div class="content">
+        <div class="emoji">{{ emoji }}</div>
+        <h3>{{ title }}</h3>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,1 +1,9 @@
 /* You can add global styles to this file, and also import other style files */
+* {
+  touch-action: manipulation;
+}
+
+button {
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+}
